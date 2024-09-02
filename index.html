@@ -7,29 +7,32 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #0d0d0d;
+            color: #33ff33;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
         }
         header {
-            background-color: #007bff;
-            color: #fff;
+            background-color: #000;
+            color: #33ff33;
             padding: 20px 0;
             text-align: center;
+            border-bottom: 2px solid #33ff33;
         }
         header h1 {
             margin: 0;
+            font-size: 36px;
         }
         nav {
-            background-color: #333;
-            color: #fff;
+            background-color: #111;
+            color: #33ff33;
             padding: 10px;
             text-align: center;
+            border-bottom: 2px solid #33ff33;
         }
         nav a {
-            color: #fff;
+            color: #33ff33;
             text-decoration: none;
             margin: 0 15px;
             font-size: 16px;
@@ -38,9 +41,9 @@
             text-decoration: underline;
         }
         .hero {
-            background: url('hero-image.jpg') no-repeat center center/cover;
+            background: url('hacker-bg.jpg') no-repeat center center/cover;
             height: 400px;
-            color: #fff;
+            color: #33ff33;
             text-align: center;
             padding: 100px 20px;
         }
@@ -56,22 +59,70 @@
         }
         h2 {
             font-size: 36px;
-            color: #007bff;
+            color: #33ff33;
             margin-bottom: 20px;
+            border-bottom: 1px solid #33ff33;
+            padding-bottom: 10px;
         }
         p {
             font-size: 18px;
             line-height: 1.6;
+            color: #b3ffb3;
+        }
+        .service-item h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #33ff33;
         }
         .service-item {
             margin-bottom: 20px;
+            padding: 10px;
+            border-left: 2px solid #33ff33;
         }
         footer {
-            background-color: #333;
-            color: #fff;
+            background-color: #000;
+            color: #33ff33;
             text-align: center;
             padding: 20px 0;
             margin-top: 40px;
+            border-top: 2px solid #33ff33;
+        }
+        /* Additional Hacker Theme Styles */
+        .glitch {
+            color: #33ff33;
+            position: relative;
+            display: inline-block;
+        }
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #ff3333;
+            background: #000;
+            overflow: hidden;
+            clip: rect(0, 900px, 0, 0);
+            animation: glitch 2s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            color: #3333ff;
+            z-index: -1;
+            animation: glitch 2s infinite linear alternate-reverse;
+            animation-delay: 1s;
+        }
+        @keyframes glitch {
+            0% {
+                clip: rect(0, 900px, 0, 0);
+                transform: translate(10px, -10px);
+            }
+            50% {
+                clip: rect(0, 900px, 0, 0);
+                transform: translate(-10px, 10px);
+            }
+            100% {
+                clip: rect(0, 900px, 0, 0);
+                transform: translate(10px, -10px);
+            }
         }
     </style>
 </head>
@@ -79,7 +130,7 @@
 
     <!-- Header Section -->
     <header>
-        <h1>KXH Solutions</h1>
+        <h1 class="glitch" data-text="KXH Solutions">KXH Solutions</h1>
         <p>Your Trusted Network Solutions Partner for Small Businesses</p>
     </header>
 
@@ -93,7 +144,7 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <h2>Empowering Your Business with Reliable Network Solutions</h2>
+        <h2 class="glitch" data-text="Empowering Your Business with Reliable Network Solutions">Empowering Your Business with Reliable Network Solutions</h2>
         <p>Innovative, Secure, and Scalable Network Solutions for Small Businesses</p>
     </section>
 
